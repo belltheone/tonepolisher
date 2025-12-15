@@ -67,6 +67,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ko">
+            <head>
+                {/* Google AdSense */}
+                <script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5965391983551048"
+                    crossOrigin="anonymous"
+                />
+            </head>
             <body className="antialiased min-h-screen bg-background">
                 {children}
             </body>

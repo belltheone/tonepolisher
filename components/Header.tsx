@@ -7,6 +7,7 @@ import Toast from './Toast'
 /**
  * 헤더 컴포넌트
  * 로고와 공유하기 버튼을 포함합니다.
+ * 웹 퍼스트(Desktop First) 반응형 디자인
  */
 export default function Header() {
     const [showToast, setShowToast] = useState(false)
@@ -40,34 +41,47 @@ export default function Header() {
 
     return (
         <>
-            <header className="w-full px-4 py-4 flex items-center justify-between">
+            <header className="w-full px-4 lg:px-8 py-4 lg:py-5 flex items-center justify-between bg-white/80 backdrop-blur-sm border-b border-gray-100">
                 {/* 로고 영역 */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3 lg:gap-4">
                     {/* 강아지 아이콘 */}
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/30">
-                        <Dog className="w-6 h-6 text-white" />
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg shadow-primary-500/30">
+                        <Dog className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
                     </div>
                     {/* 서비스명 */}
                     <div>
-                        <h1 className="text-lg font-bold text-gray-800">
+                        <h1 className="text-lg lg:text-xl font-bold text-gray-800">
                             개찰번역기
                         </h1>
-                        <p className="text-xs text-gray-500 -mt-0.5">
+                        <p className="text-xs lg:text-sm text-gray-500 -mt-0.5">
                             Tone Polisher
                         </p>
                     </div>
                 </div>
 
-                {/* 공유하기 버튼 */}
-                <button
-                    onClick={handleShare}
-                    className="p-2.5 rounded-xl bg-white border border-gray-200 
-                   hover:bg-gray-50 hover:border-gray-300 
-                   transition-all duration-200 active:scale-95"
-                    aria-label="공유하기"
-                >
-                    <Share2 className="w-5 h-5 text-gray-600" />
-                </button>
+                {/* 우측 메뉴 */}
+                <div className="flex items-center gap-3 lg:gap-4">
+                    {/* 데스크톱에서 추가 메뉴 표시 가능 */}
+                    <nav className="hidden lg:flex items-center gap-6 mr-4">
+                        <a href="#" className="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                            사용법
+                        </a>
+                        <a href="#" className="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                            후원하기 ☕
+                        </a>
+                    </nav>
+
+                    {/* 공유하기 버튼 */}
+                    <button
+                        onClick={handleShare}
+                        className="p-2.5 lg:p-3 rounded-xl bg-white border border-gray-200 
+                     hover:bg-gray-50 hover:border-gray-300 
+                     transition-all duration-200 active:scale-95"
+                        aria-label="공유하기"
+                    >
+                        <Share2 className="w-5 h-5 lg:w-5 lg:h-5 text-gray-600" />
+                    </button>
+                </div>
             </header>
 
             {/* 토스트 알림 */}

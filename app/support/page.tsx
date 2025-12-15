@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Coffee, Heart, CreditCard } from 'lucide-react'
+import { Coffee } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: '후원하기',
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 /**
  * 후원하기 페이지
+ * Buy Me a Coffee 연동
  */
 export default function SupportPage() {
     return (
@@ -33,60 +34,27 @@ export default function SupportPage() {
                     <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4">
                         개찰번역기는 무료 서비스입니다
                     </h2>
-                    <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
                         개찰번역기는 누구나 무료로 사용할 수 있는 서비스입니다.
                         <br />
                         하지만 서비스 운영에는 서버 비용, AI API 비용 등이 발생합니다.
                         <br />
                         여러분의 작은 후원이 서비스를 유지하는 데 큰 힘이 됩니다! 💪
                     </p>
-                </div>
 
-                {/* 후원 방법 */}
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    {/* Buy Me a Coffee */}
-                    <div className="card hover:shadow-xl transition-shadow">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-                                <Coffee className="w-6 h-6 text-yellow-600" />
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-gray-800">Buy Me a Coffee</h3>
-                                <p className="text-sm text-gray-500">커피 한 잔 사주기</p>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 mb-4">
-                            가장 간편한 후원 방법! 커피 한 잔 가격으로 응원해 주세요.
-                        </p>
+                    {/* Buy Me a Coffee 버튼 */}
+                    <div className="flex justify-center">
                         <a
-                            href="#"
-                            className="btn-secondary w-full flex items-center justify-center gap-2"
+                            href="https://www.buymeacoffee.com/gctranslator"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-[#FFDD00] text-black px-6 py-3 rounded-xl font-bold 
+                       flex items-center gap-3 text-lg
+                       hover:bg-[#ffcc00] hover:shadow-lg hover:shadow-yellow-500/30
+                       transition-all duration-200 active:scale-[0.98]"
                         >
-                            <Coffee className="w-5 h-5" />
-                            <span>커피 사주기</span>
-                        </a>
-                    </div>
-
-                    {/* 카카오페이 */}
-                    <div className="card hover:shadow-xl transition-shadow">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-                                <CreditCard className="w-6 h-6 text-yellow-600" />
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-gray-800">카카오페이 송금</h3>
-                                <p className="text-sm text-gray-500">간편 송금</p>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 mb-4">
-                            카카오페이로 간편하게 후원하실 수 있습니다.
-                        </p>
-                        <a
-                            href="#"
-                            className="btn-secondary w-full flex items-center justify-center gap-2"
-                        >
-                            <Heart className="w-5 h-5" />
-                            <span>카카오페이로 후원</span>
+                            <Coffee className="w-6 h-6" />
+                            <span>Buy me a coffee</span>
                         </a>
                     </div>
                 </div>

@@ -22,6 +22,7 @@ function ResultContent() {
     const [error, setError] = useState('')
     const [originalText, setOriginalText] = useState('')
     const [mode, setMode] = useState<TranslateMode>('Professional')
+    const [newInputText, setNewInputText] = useState('')  // 새 변환 입력
 
     useEffect(() => {
         const text = searchParams.get('text')
@@ -105,6 +106,18 @@ function ResultContent() {
         router.push('/')
     }
 
+    // 새 텍스트로 변환
+    const handleNewTranslate = () => {
+        if (newInputText.trim().length === 0) return
+        const params = new URLSearchParams({
+            text: newInputText,
+            mode: mode,
+        })
+        router.push(`/result?${params.toString()}`)
+        // 페이지 새로고침으로 광고 다시 로드
+        window.location.href = `/result?${params.toString()}`
+    }
+
     const modeConfig = MODE_CONFIG[mode]
 
     return (
@@ -183,13 +196,42 @@ function ResultContent() {
                             <ResponsiveAdBanner slot="result-bottom" />
                         </div>
 
+                        {/* 새로운 변환 입력 */}
+                        <div className="mt-8 card bg-gradient-to-br from-gray-50 to-white">
+                            <h3 className="text-sm lg:text-base font-semibold text-gray-700 mb-3">
+                                <span role="img" aria-label="writing">✏️</span> 새로운 문장 변환하기
+                            </h3>
+                            <div className="relative">
+                                <textarea
+                                    value={newInputText}
+                                    onChange={(e) => setNewInputText(e.target.value)}
+                                    placeholder="변환하고 싶은 새로운 문장을 입력하세요..."
+                                    className="input-textarea min-h-[100px] text-base"
+                                    disabled={isLoading}
+                                />
+                                <div className="absolute bottom-3 right-3">
+                                    <span className="text-xs text-gray-400">
+                                        {newInputText.length}/500
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                onClick={handleNewTranslate}
+                                disabled={newInputText.trim().length === 0 || isLoading}
+                                className="btn-primary w-full mt-3 flex items-center justify-center gap-2"
+                            >
+                                <span role="img" aria-label="sparkles">✨</span>
+                                <span>찰떡으로 변환하기</span>
+                            </button>
+                        </div>
+
                         {/* 새로 시작 버튼 */}
-                        <div className="mt-8 text-center">
+                        <div className="mt-6 text-center">
                             <button
                                 onClick={handleNewStart}
                                 className="btn-secondary px-8 py-3"
                             >
-                                🏠 처음으로 돌아가기
+                                <span role="img" aria-label="home">🏠</span> 처음으로 돌아가기
                             </button>
                         </div>
                     </div>

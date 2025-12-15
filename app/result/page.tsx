@@ -171,6 +171,7 @@ function ResultContent() {
                             <div className="card">
                                 <ResultCard
                                     results={results}
+                                    mode={mode}
                                     onRetry={handleRetry}
                                     isLoading={isLoading}
                                 />

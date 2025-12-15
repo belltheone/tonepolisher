@@ -1,10 +1,10 @@
+/* Pretendard 폰트 로드 - 반드시 맨 위에 위치 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
 /* Tailwind CSS 기본 설정 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Pretendard 폰트 로드 */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 /* 전역 스타일 */
 :root {
@@ -51,9 +51,12 @@ body {
 
 /* 로딩 애니메이션 - 펄스 효과 */
 @keyframes loading-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -66,17 +69,11 @@ body {
 /* 버튼 호버 효과 */
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl
-           transition-all duration-200 ease-in-out
-           hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-600/30
-           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed
-           disabled:hover:shadow-none disabled:hover:bg-primary-600;
+    @apply bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 ease-in-out hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-600/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:bg-primary-600;
   }
 
   .btn-secondary {
-    @apply bg-white text-primary-600 font-medium py-2 px-4 rounded-lg
-           border border-primary-200 transition-all duration-200
-           hover:bg-primary-50 hover:border-primary-300;
+    @apply bg-white text-primary-600 font-medium py-2 px-4 rounded-lg border border-primary-200 transition-all duration-200 hover:bg-primary-50 hover:border-primary-300;
   }
 
   /* 카드 스타일 */
@@ -86,10 +83,7 @@ body {
 
   /* 입력 필드 스타일 */
   .input-textarea {
-    @apply w-full p-4 rounded-xl border-2 border-gray-200 
-           focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20
-           transition-all duration-200 resize-none outline-none
-           placeholder:text-gray-400;
+    @apply w-full p-4 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 resize-none outline-none placeholder:text-gray-400;
   }
 }
 
@@ -103,4 +97,25 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Prose 스타일 (이용약관, 개인정보처리방침 페이지용) */
+.prose h2 {
+  @apply text-xl font-bold text-gray-800 mt-8 mb-4;
+}
+
+.prose p {
+  @apply text-gray-600 leading-relaxed mb-4;
+}
+
+.prose ul {
+  @apply list-disc list-inside space-y-2 text-gray-600 mb-4;
+}
+
+.prose a {
+  @apply text-primary-600 hover:underline;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-800;
 }

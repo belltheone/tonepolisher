@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+// 도메인 설정
+const SITE_URL = 'https://www.gctranslator.site'
+
 // SEO 메타데이터 설정
 export const metadata: Metadata = {
-    title: '개찰번역기 | 개떡같이 말해도 찰떡같이 바꿔드립니다',
+    metadataBase: new URL(SITE_URL),
+    title: {
+        default: '개찰번역기 | 개떡같이 말해도 찰떡같이 바꿔드립니다',
+        template: '%s | 개찰번역기'
+    },
     description: '거친 언어를 상황에 맞는 적절한 문체로 변환해 주는 AI 서비스. 비즈니스 메일, 연애/썸 메시지, 정중한 거절까지!',
     keywords: ['번역기', 'AI', '윤문', '비즈니스 메일', '문장 다듬기', '개찰번역기', '톤 변환'],
     authors: [{ name: '개찰번역기 팀' }],
@@ -14,6 +21,7 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'ko_KR',
         siteName: '개찰번역기',
+        url: SITE_URL,
         images: [
             {
                 url: '/og-image.png',
@@ -30,16 +38,22 @@ export const metadata: Metadata = {
         description: '거친 언어를 상황에 맞는 적절한 문체로 변환해 주는 AI 서비스',
         images: ['/og-image.png'],
     },
-    // 뷰포트 설정
-    viewport: {
-        width: 'device-width',
-        initialScale: 1,
-        maximumScale: 1,
-    },
     // 파비콘
     icons: {
         icon: '/favicon.ico',
     },
+    // 로봇 설정
+    robots: {
+        index: true,
+        follow: true,
+    },
+}
+
+// 뷰포트 설정 (Next.js 14+ 방식)
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
 }
 
 /**

@@ -1,8 +1,10 @@
 'use client'
 
+import Link from 'next/link'
+
 /**
  * 푸터 컴포넌트
- * 면책 조항 및 연락처 정보를 표시합니다.
+ * 면책 조항 및 링크를 표시합니다.
  * 웹 퍼스트(Desktop First) 반응형 디자인
  */
 export default function Footer() {
@@ -15,11 +17,11 @@ export default function Footer() {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-8">
                     {/* 좌측: 로고/브랜드 */}
                     <div className="text-center lg:text-left">
-                        <p className="text-sm font-semibold text-gray-600">
+                        <Link href="/" className="text-sm font-semibold text-gray-600 hover:text-primary-600 transition-colors">
                             🐕 개찰번역기
-                        </p>
+                        </Link>
                         <p className="text-xs text-gray-400 mt-0.5">
-                            Tone Polisher
+                            www.gctranslator.site
                         </p>
                     </div>
 
@@ -36,26 +38,26 @@ export default function Footer() {
                     {/* 우측: 링크 */}
                     <div className="text-center lg:text-right">
                         <div className="flex items-center justify-center lg:justify-end gap-4 text-xs lg:text-sm">
-                            <a
-                                href="mailto:contact@example.com"
+                            <Link
+                                href="mailto:contact@gctranslator.site"
                                 className="text-gray-400 hover:text-primary-600 transition-colors"
                             >
                                 Contact
-                            </a>
+                            </Link>
                             <span className="text-gray-300">|</span>
-                            <a
-                                href="#"
+                            <Link
+                                href="/terms"
                                 className="text-gray-400 hover:text-primary-600 transition-colors"
                             >
                                 이용약관
-                            </a>
+                            </Link>
                             <span className="text-gray-300">|</span>
-                            <a
-                                href="#"
+                            <Link
+                                href="/privacy"
                                 className="text-gray-400 hover:text-primary-600 transition-colors"
                             >
                                 개인정보처리방침
-                            </a>
+                            </Link>
                         </div>
                         <p className="text-xs text-gray-400 mt-2">
                             © {currentYear} 개찰번역기. All rights reserved.

@@ -1,17 +1,19 @@
 'use client'
 
-import { Dog, Share2 } from 'lucide-react'
+import { Dog, Share2, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import Link from 'next/link'
 import Toast from './Toast'
 
 /**
  * 헤더 컴포넌트
- * 로고와 공유하기 버튼을 포함합니다.
+ * 로고와 네비게이션, 공유하기 버튼을 포함합니다.
  * 웹 퍼스트(Desktop First) 반응형 디자인
  */
 export default function Header() {
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     // 공유하기 기능
     const handleShare = async () => {
@@ -43,7 +45,7 @@ export default function Header() {
         <>
             <header className="w-full px-4 lg:px-8 py-4 lg:py-5 flex items-center justify-between bg-white/80 backdrop-blur-sm border-b border-gray-100">
                 {/* 로고 영역 */}
-                <div className="flex items-center gap-3 lg:gap-4">
+                <Link href="/" className="flex items-center gap-3 lg:gap-4">
                     {/* 강아지 아이콘 */}
                     <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg shadow-primary-500/30">
                         <Dog className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
@@ -57,18 +59,24 @@ export default function Header() {
                             Tone Polisher
                         </p>
                     </div>
-                </div>
+                </Link>
 
                 {/* 우측 메뉴 */}
                 <div className="flex items-center gap-3 lg:gap-4">
-                    {/* 데스크톱에서 추가 메뉴 표시 가능 */}
+                    {/* 데스크톱 네비게이션 */}
                     <nav className="hidden lg:flex items-center gap-6 mr-4">
-                        <a href="#" className="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                        <Link
+                            href="/how-to-use"
+                            className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        >
                             사용법
-                        </a>
-                        <a href="#" className="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                        </Link>
+                        <Link
+                            href="/support"
+                            className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        >
                             후원하기 ☕
-                        </a>
+                        </Link>
                     </nav>
 
                     {/* 공유하기 버튼 */}
@@ -81,8 +89,59 @@ export default function Header() {
                     >
                         <Share2 className="w-5 h-5 lg:w-5 lg:h-5 text-gray-600" />
                     </button>
+
+                    {/* 모바일 메뉴 버튼 */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="lg:hidden p-2.5 rounded-xl bg-white border border-gray-200 
+                     hover:bg-gray-50 hover:border-gray-300 
+                     transition-all duration-200"
+                        aria-label="메뉴"
+                    >
+                        {mobileMenuOpen ? (
+                            <X className="w-5 h-5 text-gray-600" />
+                        ) : (
+                            <Menu className="w-5 h-5 text-gray-600" />
+                        )}
+                    </button>
                 </div>
             </header>
+
+            {/* 모바일 메뉴 드롭다운 */}
+            {mobileMenuOpen && (
+                <div className="lg:hidden bg-white border-b border-gray-100 animate-slide-up">
+                    <nav className="px-4 py-4 space-y-2">
+                        <Link
+                            href="/how-to-use"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            📖 사용법
+                        </Link>
+                        <Link
+                            href="/support"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            ☕ 후원하기
+                        </Link>
+                        <Link
+                            href="/terms"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            📋 이용약관
+                        </Link>
+                        <Link
+                            href="/privacy"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            🔒 개인정보처리방침
+                        </Link>
+                    </nav>
+                </div>
+            )}
 
             {/* 토스트 알림 */}
             <Toast

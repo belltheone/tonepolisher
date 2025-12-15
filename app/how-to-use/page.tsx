@@ -26,7 +26,7 @@ export default function HowToUsePage() {
                 {/* 페이지 타이틀 */}
                 <div className="text-center mb-10">
                     <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-                        📖 사용법
+                        <span role="img" aria-label="book">📖</span> 사용법
                     </h1>
                     <p className="text-gray-500 lg:text-lg">
                         개찰번역기를 200% 활용하는 방법
@@ -50,15 +50,15 @@ export default function HowToUsePage() {
                                 </p>
                                 <ul className="mt-3 space-y-2 text-gray-600">
                                     <li className="flex items-center gap-2">
-                                        <span className="text-xl">💼</span>
+                                        <span className="text-xl" role="img" aria-label="briefcase">💼</span>
                                         <span><strong>사회생활</strong> - 비즈니스 메일, 상사에게 보고, 공식적인 요청</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="text-xl">💕</span>
+                                        <span className="text-xl" role="img" aria-label="heart">💕</span>
                                         <span><strong>연애</strong> - 카톡 메시지, 썸 상대에게, 다정한 표현</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="text-xl">🕊️</span>
+                                        <span className="text-xl" role="img" aria-label="dove">🕊️</span>
                                         <span><strong>예절</strong> - 정중한 거절, 조심스러운 부탁, 사과</span>
                                     </li>
                                 </ul>
@@ -105,7 +105,7 @@ export default function HowToUsePage() {
                                     결과가 마음에 들지 않으면 &quot;다시 변환하기&quot;를 눌러보세요!
                                 </p>
                                 <div className="mt-4 p-4 bg-primary-50 rounded-lg border border-primary-100">
-                                    <p className="text-sm text-primary-600 mb-1">💼 사회생활 모드 결과:</p>
+                                    <p className="text-sm text-primary-600 mb-1"><span role="img" aria-label="briefcase">💼</span> 사회생활 모드 결과:</p>
                                     <p className="text-gray-700">&quot;죄송합니다만, 해당 부분을 다시 검토해 주시면 감사하겠습니다.&quot;</p>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@ export default function HowToUsePage() {
                         href="/"
                         className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg"
                     >
-                        <span>✨</span>
+                        <span role="img" aria-label="sparkles">✨</span>
                         <span>지금 바로 사용해보기</span>
                     </a>
                 </div>

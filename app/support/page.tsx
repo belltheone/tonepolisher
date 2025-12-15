@@ -21,7 +21,7 @@ export default function SupportPage() {
                 {/* 페이지 타이틀 */}
                 <div className="text-center mb-10">
                     <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-                        ☕ 후원하기
+                        <span role="img" aria-label="coffee">☕</span> 후원하기
                     </h1>
                     <p className="text-gray-500 lg:text-lg">
                         개찰번역기를 응원해 주세요!
@@ -30,7 +30,7 @@ export default function SupportPage() {
 
                 {/* 소개 */}
                 <div className="card text-center mb-8">
-                    <div className="text-6xl mb-4">🐕</div>
+                    <div className="text-6xl mb-4"><span role="img" aria-label="dog">🐕</span></div>
                     <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4">
                         개찰번역기는 무료 서비스입니다
                     </h2>
@@ -62,23 +62,23 @@ export default function SupportPage() {
                 {/* 후원금 사용처 */}
                 <div className="card">
                     <h3 className="text-xl font-bold text-gray-800 mb-4">
-                        💰 후원금은 이렇게 사용됩니다
+                        <span role="img" aria-label="money">💰</span> 후원금은 이렇게 사용됩니다
                     </h3>
                     <div className="space-y-3">
                         <div className="flex items-center gap-3 text-gray-600">
-                            <span className="text-2xl">🤖</span>
+                            <span className="text-2xl" role="img" aria-label="robot">🤖</span>
                             <span>OpenAI API 비용 (AI 변환 기능)</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-600">
-                            <span className="text-2xl">🖥️</span>
+                            <span className="text-2xl" role="img" aria-label="computer">🖥️</span>
                             <span>서버 호스팅 비용</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-600">
-                            <span className="text-2xl">🌐</span>
+                            <span className="text-2xl" role="img" aria-label="globe">🌐</span>
                             <span>도메인 유지 비용</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-600">
-                            <span className="text-2xl">✨</span>
+                            <span className="text-2xl" role="img" aria-label="sparkles">✨</span>
                             <span>새로운 기능 개발</span>
                         </div>
                     </div>

@@ -56,7 +56,7 @@ export default function Header() {
                             개찰번역기
                         </h1>
                         <p className="text-xs lg:text-sm text-gray-500 -mt-0.5">
-                            Tone Polisher
+                            Gae-Chal Translator
                         </p>
                     </div>
                 </Link>
@@ -75,7 +75,7 @@ export default function Header() {
                             href="/support"
                             className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                         >
-                            후원하기 ☕
+                            후원하기 <span role="img" aria-label="coffee">☕</span>
                         </Link>
                     </nav>
 
@@ -116,28 +116,28 @@ export default function Header() {
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                         >
-                            📖 사용법
+                            <span role="img" aria-label="book">📖</span> 사용법
                         </Link>
                         <Link
                             href="/support"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                         >
-                            ☕ 후원하기
+                            <span role="img" aria-label="coffee">☕</span> 후원하기
                         </Link>
                         <Link
                             href="/terms"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                         >
-                            📋 이용약관
+                            <span role="img" aria-label="clipboard">📋</span> 이용약관
                         </Link>
                         <Link
                             href="/privacy"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                         >
-                            🔒 개인정보처리방침
+                            <span role="img" aria-label="lock">🔒</span> 개인정보처리방침
                         </Link>
                     </nav>
                 </div>

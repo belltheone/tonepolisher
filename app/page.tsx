@@ -105,7 +105,7 @@ export default function HomePage() {
                                 <span className="gradient-text"> 들키지 않게 포장해 드립니다</span>
                             </h2>
                             <p className="text-gray-500 text-sm lg:text-base">
-                                개떡같이 말해도 찰떡같이 바꿔드려요 ✨
+                                개떡같이 말해도 찰떡같이 바꿔드려요 <span role="img" aria-label="sparkles">✨</span>
                             </p>
                         </section>
 
@@ -171,7 +171,7 @@ export default function HomePage() {
                             <ol className="space-y-2 text-gray-600 text-sm">
                                 <li className="flex gap-2">
                                     <span className="font-bold text-primary-600">1.</span>
-                                    <span>상황에 맞는 모드를 선택하세요 (💼사회생활 / 💕연애 / 🕊️예절)</span>
+                                    <span>상황에 맞는 모드를 선택하세요 (<span role="img" aria-label="briefcase">💼</span>사회생활 / <span role="img" aria-label="heart">💕</span>연애 / <span role="img" aria-label="dove">🕊️</span>예절)</span>
                                 </li>
                                 <li className="flex gap-2">
                                     <span className="font-bold text-primary-600">2.</span>

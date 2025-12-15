@@ -18,7 +18,7 @@ export default function Footer() {
                     {/* 좌측: 로고/브랜드 */}
                     <div className="text-center lg:text-left">
                         <Link href="/" className="text-sm font-semibold text-gray-600 hover:text-primary-600 transition-colors">
-                            🐕 개찰번역기
+                            <span role="img" aria-label="dog">🐕</span> 개찰번역기
                         </Link>
                         <p className="text-xs text-gray-400 mt-0.5">
                             www.gctranslator.site

@@ -19,7 +19,7 @@ export default function TermsPage() {
                 {/* 페이지 타이틀 */}
                 <div className="text-center mb-10">
                     <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-                        📋 이용약관
+                        <span role="img" aria-label="clipboard">📋</span> 이용약관
                     </h1>
                     <p className="text-gray-500">
                         최종 수정일: 2025년 12월 15일

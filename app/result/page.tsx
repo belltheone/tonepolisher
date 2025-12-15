@@ -134,7 +134,7 @@ function ResultContent() {
                                 <span className="text-lg">{modeConfig.icon}</span> {modeConfig.label} 모드
                             </p>
                             <h1 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
-                                변환 결과 ✨
+                                변환 결과 <span role="img" aria-label="sparkles">✨</span>
                             </h1>
                         </div>
 

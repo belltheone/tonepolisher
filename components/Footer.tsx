@@ -60,6 +60,13 @@ export default function Footer() {
                             </Link>
                             <span className="text-gray-300">|</span>
                             <Link
+                                href="/contact"
+                                className="text-gray-400 hover:text-primary-600 transition-colors"
+                            >
+                                문의
+                            </Link>
+                            <span className="text-gray-300">|</span>
+                            <Link
                                 href="/terms"
                                 className="text-gray-400 hover:text-primary-600 transition-colors"
                             >

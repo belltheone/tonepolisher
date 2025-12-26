@@ -65,6 +65,45 @@ export default function RootLayout({
 }: {
     children: React.ReactNode
 }) {
+    // JSON-LD 구조화 데이터 (WebApplication)
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: '개찰번역기',
+        alternateName: 'Gae-Chal Translator',
+        description: '거친 언어를 상황에 맞는 적절한 문체로 변환해 주는 AI 서비스. 비즈니스 메일, 연애/썸 메시지, 정중한 거절까지!',
+        url: 'https://www.gctranslator.site',
+        applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'Web Browser',
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'KRW',
+        },
+        author: {
+            '@type': 'Person',
+            name: '개찰번역기 개발자',
+        },
+        inLanguage: 'ko',
+        isAccessibleForFree: true,
+    }
+
+    // Organization JSON-LD
+    const organizationJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: '개찰번역기',
+        url: 'https://www.gctranslator.site',
+        logo: 'https://www.gctranslator.site/og-image.png',
+        contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'contact@gctranslator.site',
+            contactType: 'customer support',
+            availableLanguage: 'Korean',
+        },
+        sameAs: [],
+    }
+
     return (
         <html lang="ko">
             <head>
@@ -73,6 +112,32 @@ export default function RootLayout({
                     async
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5965391983551048"
                     crossOrigin="anonymous"
+                />
+
+                {/* Google Analytics (GA4) */}
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+                />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'G-XXXXXXXXXX');
+                        `,
+                    }}
+                />
+
+                {/* JSON-LD 구조화 데이터 */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
                 />
             </head>
             <body className="antialiased min-h-screen bg-background">

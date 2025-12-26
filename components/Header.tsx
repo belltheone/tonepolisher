@@ -66,10 +66,22 @@ export default function Header() {
                     {/* 데스크톱 네비게이션 */}
                     <nav className="hidden lg:flex items-center gap-6 mr-4">
                         <Link
-                            href="/how-to-use"
+                            href="/blog"
                             className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
                         >
-                            사용법
+                            블로그
+                        </Link>
+                        <Link
+                            href="/examples"
+                            className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        >
+                            예시
+                        </Link>
+                        <Link
+                            href="/about"
+                            className="text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        >
+                            소개
                         </Link>
                         <Link
                             href="/support"
@@ -112,6 +124,27 @@ export default function Header() {
                 <div className="lg:hidden bg-white border-b border-gray-100 animate-slide-up">
                     <nav className="px-4 py-4 space-y-2">
                         <Link
+                            href="/blog"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            <span role="img" aria-label="pencil">✍️</span> 블로그
+                        </Link>
+                        <Link
+                            href="/examples"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            <span role="img" aria-label="magic">🪄</span> 변환 예시
+                        </Link>
+                        <Link
+                            href="/about"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            <span role="img" aria-label="dog">🐕</span> 서비스 소개
+                        </Link>
+                        <Link
                             href="/how-to-use"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
@@ -119,25 +152,18 @@ export default function Header() {
                             <span role="img" aria-label="book">📖</span> 사용법
                         </Link>
                         <Link
+                            href="/faq"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                            <span role="img" aria-label="question">❓</span> FAQ
+                        </Link>
+                        <Link
                             href="/support"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                         >
                             <span role="img" aria-label="coffee">☕</span> 후원하기
-                        </Link>
-                        <Link
-                            href="/terms"
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                        >
-                            <span role="img" aria-label="clipboard">📋</span> 이용약관
-                        </Link>
-                        <Link
-                            href="/privacy"
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="block px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                        >
-                            <span role="img" aria-label="lock">🔒</span> 개인정보처리방침
                         </Link>
                     </nav>
                 </div>

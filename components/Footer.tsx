@@ -37,12 +37,26 @@ export default function Footer() {
 
                     {/* 우측: 링크 */}
                     <div className="text-center lg:text-right">
-                        <div className="flex items-center justify-center lg:justify-end gap-4 text-xs lg:text-sm">
+                        <div className="flex items-center justify-center lg:justify-end gap-3 text-xs lg:text-sm flex-wrap">
                             <Link
-                                href="mailto:contact@gctranslator.site"
+                                href="/blog"
                                 className="text-gray-400 hover:text-primary-600 transition-colors"
                             >
-                                Contact
+                                블로그
+                            </Link>
+                            <span className="text-gray-300">|</span>
+                            <Link
+                                href="/about"
+                                className="text-gray-400 hover:text-primary-600 transition-colors"
+                            >
+                                소개
+                            </Link>
+                            <span className="text-gray-300">|</span>
+                            <Link
+                                href="/faq"
+                                className="text-gray-400 hover:text-primary-600 transition-colors"
+                            >
+                                FAQ
                             </Link>
                             <span className="text-gray-300">|</span>
                             <Link
@@ -56,7 +70,7 @@ export default function Footer() {
                                 href="/privacy"
                                 className="text-gray-400 hover:text-primary-600 transition-colors"
                             >
-                                개인정보처리방침
+                                개인정보
                             </Link>
                         </div>
                         <p className="text-xs text-gray-400 mt-2">
